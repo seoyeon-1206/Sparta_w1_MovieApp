@@ -1,10 +1,18 @@
-const options = {
-    method: 'GET',
-    headers: {
-      accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNTA0YmVlZjQxZjYxNGQxMWZlZDQxZTAwYWFmZjg0YSIsInN1YiI6IjY1OTc5NmJmNWNjMTFkNzc2ZTdkODQyNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IZ78_IkpDpSstACHGP0dddrf52ji2H0-nnKLnae_aQM'
-    }
-  };
+
+async function fetchMovieDatat() {
+    const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNTA0YmVlZjQxZjYxNGQxMWZlZDQxZTAwYWFmZjg0YSIsInN1YiI6IjY1OTc5NmJmNWNjMTFkNzc2ZTdkODQyNCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.IZ78_IkpDpSstACHGP0dddrf52ji2H0-nnKLnae_aQM'
+        }
+      };
+    fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+}; 
+
   
 let baseURL = "https://image.tmdb.org/t/p/w500"
 fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
@@ -17,6 +25,14 @@ fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', opti
     });
 })
 .catch(err => console.error(err));
+
+
+
+
+
+
+
+
 
 
 const handleSearch = (e) => {
